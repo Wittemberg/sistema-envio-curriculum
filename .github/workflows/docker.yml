@@ -33,6 +33,9 @@ jobs:
           tags: ghcr.io/wittemberg/sistema-envio-curriculum:latest
 
       - name: Redeploy Portainer
-        if: ${{ vars.ENABLE_PORTAINER_DEPLOY == 'true' }}
         run: |
-          curl -fsS -X POST "${{ secrets.PORTAINER_WEBHOOK_CURRICULUM }}"
+          if [ "${{ secrets.ENABLE_PORTAINER_DEPLOY }}" = "true" ]; then
+            curl -fsS -X POST "${{ secrets.PORTAINER_WEBHOOK_CURRICULUM }}"
+          else
+            echo "Portainer redeploy disabled."
+          fi
