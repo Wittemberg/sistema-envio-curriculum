@@ -1,6 +1,6 @@
 # Sistema de envio de curriculos
 
-Aplicacao web em R/Shiny para recebimento de curriculos da rede Porto Novo Supermercados.
+Aplicacao web em R/Shiny para recebimento de curriculos.
 
 O candidato preenche os dados, anexa o curriculo e o sistema envia o arquivo por SMTP para o RH, mantendo uma copia persistida no diretorio de uploads do servidor.
 
