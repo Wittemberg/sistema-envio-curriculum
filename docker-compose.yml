@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  curriculum-app:
+    image: ghcr.io/wittemberg/sistema-envio-curriculum:latest
+
+    networks:
+      - interna
+
+    environment:
+      TZ: America/Sao_Paulo
+
+    volumes:
+      - /root/sistema-envio-curriculum/config:/srv/shiny-server/_config
+      - /root/sistema-envio-curriculum/uploads:/srv/shiny-server/uploads
+
+    deploy:
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.curriculum-app.rule=Host(`curriculum.wrtec.com.br`)"
+        - "traefik.http.routers.curriculum-app.entrypoints=websecure"
+        - "traefik.http.routers.curriculum-app.tls=true"
+        - "traefik.http.routers.curriculum-app.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.curriculum-app.loadbalancer.server.port=3838"
+      restart_policy:
+        condition: any
+
+networks:
+  interna:
+    external: true

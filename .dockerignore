@@ -1,0 +1,13 @@
+.git/
+.github/
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+_config/smtp_config.csv
+uploads/*
+
+README.md
+contexto.md
+*.Rproj
