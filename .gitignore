@@ -1,0 +1,12 @@
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+_config/smtp_config.csv
+
+uploads/*
+!uploads/.gitkeep
+
+.DS_Store
+Thumbs.db

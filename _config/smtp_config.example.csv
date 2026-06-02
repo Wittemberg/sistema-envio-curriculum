@@ -1,0 +1,8 @@
+key,value
+smtp_host,smtppro.zoho.com
+smtp_port,465
+smtp_user,email@empresa.com
+smtp_password,SENHA_AQUI
+smtp_from,email@empresa.com
+rh_email,rh@empresa.com
+max_file_mb,5
